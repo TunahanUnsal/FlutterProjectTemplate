@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:vitra_smart_remote/core/base/state/base_state.dart';
 import 'package:vitra_smart_remote/core/base/view/base_view.dart';
+import 'package:vitra_smart_remote/core/extension/locale_extension.dart';
 import 'package:vitra_smart_remote/views/home/view-model/home_view_model.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key key}) : super(key: key);
@@ -33,9 +35,10 @@ class _HomePageState extends BaseState<HomePage> {
   Widget get textMethod {
     return Observer(
         builder: (context) => Center(
-              child: Text(homeViewModel.number.toString(),
+              child: Text(
+                  "${context.locale.home} ${homeViewModel.number.toString()}",
                   style: TextStyle(
-                    fontSize: 150,
+                    fontSize: 50,
                     color: Theme.of(context).colorScheme.primary,
                   )),
             ));
