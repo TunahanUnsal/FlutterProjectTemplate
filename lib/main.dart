@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:page_transition/page_transition.dart';
-import 'package:vitra_smart_remote/views/home/view/home.dart';
+import 'package:vitra_smart_remote/views/home/view/home_view.dart';
+import 'core/init/navigation/navigation_route.dart';
+import 'core/init/navigation/navigation_service.dart';
 import 'l10n/l10n.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
@@ -13,6 +15,8 @@ void main() => runApp(MaterialApp(
       unselectedWidgetColor: Colors.white),
   home: const MyApp(),
   supportedLocales: L10n.all,
+  navigatorKey: NavigationService.instance.navigatorKey,
+  onGenerateRoute: NavigationRoute.instance.generateRoute,
   localizationsDelegates: [
     AppLocalizations.delegate,
     GlobalCupertinoLocalizations.delegate,
@@ -22,7 +26,7 @@ void main() => runApp(MaterialApp(
 ));
 
 class MyApp extends StatefulWidget {
-  const MyApp({Key key}) : super(key: key);
+  const MyApp({Key ?key}) : super(key: key);
 
   @override
   _MyState createState() => _MyState();
@@ -47,14 +51,14 @@ class _MyState extends State<MyApp> {
 
     return Scaffold(
       body: Center(
-        child: Text(AppLocalizations.of(context).welcome,style: TextStyle(color: Colors.white),),
+        child: Text(AppLocalizations.of(context)!.welcome,style: TextStyle(color: Colors.white),),
       )
     );
   }
 
   void startCountDown(context) {
     Future.delayed(Duration(seconds: 3),(){
-      Navigator.pushReplacement(context,  PageTransition(type: PageTransitionType.fade, child: const HomePage()));
+      Navigator.pushReplacement(context,  PageTransition(type: PageTransitionType.fade, child: const HomeView()));
     });
 
   }
