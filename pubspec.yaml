@@ -1,5 +1,5 @@
-name: vitra_smart_remote
-description: VitrA Smart Remote
+name: flutter_project_template
+description: Flutter Project Template
 publish_to: none
 version: 1.0.0+1
 environment:

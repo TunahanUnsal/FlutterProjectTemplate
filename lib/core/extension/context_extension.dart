@@ -9,6 +9,13 @@ extension ContextExtension on BuildContext {
   MediaQueryData get mediaQuery => MediaQuery.of(this);
 }
 
+extension FontExtension on BuildContext{
+  double get fontLowValue => 12;
+  double get fontNormalValue => 14;
+  double get fontBigValue => 16;
+  double get fontSoBigValue => 18;
+}
+
 extension MediaQueryExtension on BuildContext {
   double get height => mediaQuery.size.height;
   double get width => mediaQuery.size.width;

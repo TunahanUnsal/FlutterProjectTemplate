@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
-import 'package:vitra_smart_remote/core/base/state/base_state.dart';
-import 'package:vitra_smart_remote/core/base/view/base_view.dart';
-import 'package:vitra_smart_remote/core/extension/context_extension.dart';
-import 'package:vitra_smart_remote/views/home/view-model/home_view_model.dart';
+import 'package:flutter_project_template/core/extension/context_extension.dart';
+
+import '../../../core/base/state/base_state.dart';
+import '../../../core/base/view/base_view.dart';
+import '../view-model/home_view_model.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({Key ?key}) : super(key: key);
@@ -58,3 +59,5 @@ class _HomeViewState extends BaseState<HomeView> {
       FloatingActionButton(onPressed: () => homeViewModel.incrementNumber());
 
 }
+
+

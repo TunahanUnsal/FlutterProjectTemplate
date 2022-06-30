@@ -8,9 +8,9 @@
 //  └─────────────────────────────────┘
 
 import 'package:flutter/material.dart';
-import 'package:vitra_smart_remote/views/home/view/home_view.dart';
-import 'package:vitra_smart_remote/views/test/view/test_view.dart';
 import '../../../main.dart';
+import '../../../views/home/view/home_view.dart';
+import '../../../views/test/view/test_view.dart';
 import '../../constant/navigation/navigation_constants.dart';
 
 

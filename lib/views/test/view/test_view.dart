@@ -8,9 +8,9 @@
 //  └─────────────────────────────────┘
 
 import 'package:flutter/material.dart';
-import 'package:vitra_smart_remote/core/base/state/base_state.dart';
-import 'package:vitra_smart_remote/core/base/view/base_view.dart';
-import 'package:vitra_smart_remote/views/test/view-model/test_view_model.dart';
+import '../../../core/base/state/base_state.dart';
+import '../../../core/base/view/base_view.dart';
+import '../view-model/test_view_model.dart';
 
 
 class TestView extends StatefulWidget {
@@ -26,11 +26,11 @@ class _TestViewState extends BaseState<TestView> {
   @override
   Widget build(BuildContext context) {
     return BaseView<TestViewModel>(
-        viewModel: TestViewModel(),
-        onPageBuilder: ((buildContext, value) => scaffoldMethod),
-        onModelReady: (model) {
-          testViewModel = model;
-        });
+            viewModel: TestViewModel(),
+            onPageBuilder: ((buildContext, value) => scaffoldMethod),
+            onModelReady: (model) {
+              testViewModel = model;
+            });
   }
 
   Scaffold get scaffoldMethod => Scaffold(
