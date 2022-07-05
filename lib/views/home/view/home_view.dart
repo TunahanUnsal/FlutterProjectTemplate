@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_project_template/core/extension/context_extension.dart';
-
 import '../../../core/base/state/base_state.dart';
 import '../../../core/base/view/base_view.dart';
 import '../view-model/home_view_model.dart';
@@ -14,16 +13,14 @@ class HomeView extends StatefulWidget {
 }
 
 class _HomeViewState extends BaseState<HomeView> {
-  late HomeViewModel homeViewModel;
+  HomeViewModel homeViewModel = HomeViewModel();
 
   @override
   Widget build(BuildContext context) {
     return BaseView<HomeViewModel>(
-      viewModel: HomeViewModel(),
+      viewModel: homeViewModel,
       onPageBuilder: ((buildContext, value) => scaffoldBody),
-      onModelReady: (model) {
-        homeViewModel = model;
-      },
+      onModelReady: () {},
     );
   }
 

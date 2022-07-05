@@ -21,16 +21,14 @@ class TestView extends StatefulWidget {
 }
 
 class _TestViewState extends BaseState<TestView> {
-  late TestViewModel testViewModel;
+  TestViewModel testViewModel = TestViewModel();
 
   @override
   Widget build(BuildContext context) {
     return BaseView<TestViewModel>(
-            viewModel: TestViewModel(),
+            viewModel: testViewModel,
             onPageBuilder: ((buildContext, value) => scaffoldMethod),
-            onModelReady: (model) {
-              testViewModel = model;
-            });
+            onModelReady: () {});
   }
 
   Scaffold get scaffoldMethod => Scaffold(
