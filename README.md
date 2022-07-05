@@ -1,16 +1,49 @@
-# vitra_smart_remote
+------------------------------------------
+## Flutter Project Template
+------------------------------------------
 
-VitrA Smart Remote
+##### Mobx
+##### Navigator
+##### MVVM
+##### Extensions
 
-## Getting Started
+------------------------------------------
+## SNIPPETS FOR ANDROID STUDIO
+------------------------------------------
 
-This project is a starting point for a Flutter application.
+#### Mobx:
 
-A few resources to get you started if this is your first Flutter project:
+```Dart
+import 'package:mobx/mobx.dart';
+part '$FILENAME$.g.dart';
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+class $CLASSNAME$ = _$CLASSNAME$ with _$$$CLASSNAME$;
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+abstract class _$CLASSNAME$ with Store, BaseViewModel {
+}
+```
+
+------------------------------------------
+
+#### Singleton Eager
+
+```Dart
+class $CLASSNAME$ {
+      static final $$CLASSNAME$ _instance = $CLASSNAME$._init();
+      static $$CLASSNAME$$ get instance => _instance;
+      $CLASSNAME$._init();
+}
+```
+
+------------------------------------------
+
+#### BaseView
+
+```Dart
+BaseView<$VALUE$>(
+        viewModel: $VALUE$(),
+        onPageBuilder: ((buildContext, value) => Scaffold()),
+        onModelReady: (model) {
+          $VALUE$ = model;
+        });
+```
