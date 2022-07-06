@@ -6,6 +6,7 @@
 ##### Navigator
 ##### MVVM
 ##### Extensions
+##### intl Localization
 
 ------------------------------------------
 ## SNIPPETS FOR ANDROID STUDIO
