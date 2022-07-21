@@ -44,7 +44,5 @@ class $CLASSNAME$ {
 BaseView<$VALUE$>(
         viewModel: $VALUE$(),
         onPageBuilder: ((buildContext, value) => Scaffold()),
-        onModelReady: (model) {
-          $VALUE$ = model;
-        });
+        onModelReady: () {});
 ```
